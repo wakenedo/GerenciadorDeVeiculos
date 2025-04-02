@@ -80,17 +80,6 @@ const VehicleForm: React.FC<VehicleFormProps> = ({
         required
       />
 
-      {/* Availability Toggle */}
-      <div className="flex items-center">
-        <input
-          type="checkbox"
-          name="availability"
-          checked={!formData.availability}
-          onChange={handleChange}
-        />
-        <label className="ml-2">Disponível</label>
-      </div>
-
       <button
         type="submit"
         className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
