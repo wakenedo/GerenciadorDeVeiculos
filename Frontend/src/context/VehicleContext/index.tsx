@@ -149,12 +149,6 @@ export const VehicleProvider = ({
       setVehicles((prevVehicles) =>
         prevVehicles.map((v) => (v.id === id ? { ...v, availability } : v))
       );
-
-      toast.success(
-        availability
-          ? "🚗 Veículo disponível para locação!"
-          : "🔒 Veículo indisponível."
-      );
     } catch (error) {
       toast.error("❌ Erro ao atualizar disponibilidade.");
       setError({ message: "Erro ao atualizar disponibilidade.", error });

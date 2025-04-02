@@ -121,7 +121,7 @@ const Vehicles = () => {
         <span className="text-left flex text-xs font-light mt-4">
           Registros:
         </span>
-        <ul className="mt-2 space-y-2  p-4 rounded-md bg-slate-100 ">
+        <ul className="mt-2 space-y-2  p-4 rounded-md bg-slate-200 min-h-62 max-h-62 overflow-y-auto ">
           {filteredVehicles.length === 0 ? (
             <p className="text-gray-500  ">Nenhum veículo encontrado.</p>
           ) : (
@@ -172,7 +172,7 @@ const Vehicles = () => {
 
       {/* ✅ Modal for Editing Vehicle */}
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-90 backdrop-blur-md">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">
             <h3 className="text-xl font-semibold mb-4">Editar Veículo</h3>
             <VehicleForm

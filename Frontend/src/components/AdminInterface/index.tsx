@@ -1,6 +1,7 @@
 import Customers from "../Customers";
 import Rentals from "../Rentals";
 import Vehicles from "../Vehicles";
+import StatsDashboard from "./StatsDashboard";
 
 const AdminInterface = () => {
   return (
@@ -10,6 +11,7 @@ const AdminInterface = () => {
         <h1 className="text-left text-2xl font-light text-gray-800">
           Admin Interface
         </h1>
+        <StatsDashboard />
         <Vehicles />
         <Customers />
         <Rentals />

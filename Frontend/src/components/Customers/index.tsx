@@ -52,27 +52,32 @@ const Customers = () => {
       </form>
 
       {/* Lista de Clientes */}
-      <ul className="mt-4 space-y-3">
-        {customers.length === 0 && (
-          <p className="text-gray-500">Nenhum cliente encontrado.</p>
-        )}
-        {customers.map((customer) => (
-          <li
-            key={customer.id}
-            className="border p-3 rounded-lg bg-gray-100 flex justify-between items-center"
-          >
-            <span className="text-gray-800">
-              👤 {customer.name} | 📞 {customer.contact}
-            </span>
-            <button
-              onClick={() => deleteCustomer(customer.id)}
-              className="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition"
+      <div>
+        <span className="text-left flex text-xs font-light mt-4">
+          Registros:
+        </span>
+        <ul className="mt-2 space-y-2 p-4 rounded-md bg-slate-200 min-h-62 max-h-62 overflow-y-auto">
+          {customers.length === 0 && (
+            <p className="text-gray-500">Nenhum cliente encontrado.</p>
+          )}
+          {customers.map((customer) => (
+            <li
+              key={customer.id}
+              className="p-3 rounded-lg bg-white shadow-sm flex justify-between items-center"
             >
-              ❌
-            </button>
-          </li>
-        ))}
-      </ul>
+              <span className="text-gray-800">
+                👤 {customer.name} | 📞 {customer.contact}
+              </span>
+              <button
+                onClick={() => deleteCustomer(customer.id)}
+                className="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition"
+              >
+                ❌
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

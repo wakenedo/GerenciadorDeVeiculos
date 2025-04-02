@@ -140,28 +140,33 @@ const Rentals = () => {
       </form>
 
       {/* Lista de Locações */}
-      <ul className="mt-4 space-y-3">
-        {rentals.length === 0 && (
-          <p className="text-gray-500">Nenhuma locação encontrada.</p>
-        )}
-        {rentals.map((rental) => (
-          <li
-            key={rental.id}
-            className="border p-3 rounded-lg bg-gray-100 flex justify-between items-center"
-          >
-            <span className="text-gray-800">
-              🚗 {rental.vehicle_id} | 👤 {rental.customer_id} | 📅{" "}
-              {rental.start_date} - {rental.end_date} | 💰 R$ {rental.price}
-            </span>
-            <button
-              onClick={() => deleteRental(rental.id)}
-              className="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition"
+      <div>
+        <span className="text-left flex text-xs font-light mt-4">
+          Registros:
+        </span>
+        <ul className="mt-2 space-y-2 p-4 rounded-md bg-slate-200 min-h-62 max-h-62 overflow-y-auto">
+          {rentals.length === 0 && (
+            <p className="text-gray-500">Nenhuma locação encontrada.</p>
+          )}
+          {rentals.map((rental) => (
+            <li
+              key={rental.id}
+              className="p-3 rounded-lg bg-white shadow-sm flex justify-between items-center"
             >
-              ❌
-            </button>
-          </li>
-        ))}
-      </ul>
+              <span className="text-gray-800">
+                🚗 {rental.vehicle_id} | 👤 {rental.customer_id} | 📅{" "}
+                {rental.start_date} - {rental.end_date} | 💰 R$ {rental.price}
+              </span>
+              <button
+                onClick={() => deleteRental(rental.id)}
+                className="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition"
+              >
+                ❌
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

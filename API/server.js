@@ -9,11 +9,13 @@ app.use(express.json());
 const customersRoutes = require("./routes/customers");
 const vehiclesRoutes = require("./routes/vehicles");
 const rentalsRoutes = require("./routes/rentals");
+const statsRoutes = require("./routes/stats");
 
 // Definindo as rotas
 app.use("/clientes", customersRoutes);
 app.use("/veiculos", vehiclesRoutes);
 app.use("/locacoes", rentalsRoutes);
+app.use("/stats", statsRoutes);
 
 // Servidor rodando
 const PORT = 8081;
